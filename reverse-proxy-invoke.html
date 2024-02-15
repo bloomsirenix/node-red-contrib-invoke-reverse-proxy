@@ -15,18 +15,18 @@
     },
     oneditprepare: function () {
       // Pre-populate the endpoint and port fields in the editor
-      $('#node-input-endpoint').val(this.endpoint);
-      $('#node-input-port').val(this.port);
+      document.getElementById('node-input-endpoint').value = this.endpoint;
+      document.getElementById('node-input-port').value = this.port;
     },
     oneditsave: function () {
       // Save the endpoint and port values
-      this.endpoint = $('#node-input-endpoint').val();
-      this.port = $('#node-input-port').val();
+      this.endpoint = document.getElementById('node-input-endpoint').value;
+      this.port = document.getElementById('node-input-port').value;
     }
   });
 </script>
 
-// Update this line to use the correct template name
+<!-- Update this line to use the correct template name -->
 <script type="text/html" data-template-name="reverse-proxy-invoke">
   <div class="form-row">
     <label for="node-input-endpoint">
