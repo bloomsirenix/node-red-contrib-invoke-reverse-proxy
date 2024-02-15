@@ -1,0 +1,42 @@
+<script type="text/javascript">
+  RED.nodes.registerType('reverse-proxy', {
+    category: 'function',
+    color: '#a6bbcf',
+    defaults: {
+      name: { value: "" },
+      endpoint: { value: "http://default-endpoint.com" },
+      port: { value: 3000 }
+    },
+    inputs: 0,
+    outputs: 0,
+    icon: "arrow-in.png",
+    label: function () {
+      return this.name || "Reverse Proxy";
+    },
+    oneditprepare: function () {
+      // Pre-populate the endpoint and port fields in the editor
+      $('#node-input-endpoint').val(this.endpoint);
+      $('#node-input-port').val(this.port);
+    },
+    oneditsave: function () {
+      // Save the endpoint and port values
+      this.endpoint = $('#node-input-endpoint').val();
+      this.port = $('#node-input-port').val();
+    }
+  });
+</script>
+
+<script type="text/html" data-template-name="reverse-proxy">
+  <div class="form-row">
+    <label for="node-input-endpoint">
+      <i class="fa fa-globe"></i> Endpoint
+    </label>
+    <input type="text" id="node-input-endpoint" placeholder="http://default-endpoint.com">
+  </div>
+  <div class="form-row">
+    <label for="node-input-port">
+      <i class="fa fa-random"></i> Port
+    </label>
+    <input type="number" id="node-input-port" placeholder="3000">
+  </div>
+</script>
