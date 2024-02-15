@@ -7,6 +7,7 @@ module.exports = function (RED) {
 
     const app = express();
     const server = http.createServer(app);
+  this.label = config.label || "Reverse Proxy"; // Default label if not configured
 
     const targetEndpoint = config.endpoint || "http://default-endpoint.com"; // Default endpoint if not configured
 
