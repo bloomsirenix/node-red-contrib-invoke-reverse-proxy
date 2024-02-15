@@ -1,15 +1,26 @@
 {
   "name": "node-red-contrib-invoke-reverse-proxy",
   "version": "1.0.0",
-  "description": "Node-RED Reverse Proxy",
-  "main": "index.js",
-  "keywords": ["node-red", "reverse proxy"],
-  "dependencies": {
-    "express": "^4.17.1"
+  "description": "A Node-RED module that acts like a NGINX reverse proxy for InvokeAI",
+  "main": "reverse-proxy-invoke.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "node-red": {
     "nodes": {
-      "reverse-proxy-invoke": "index.js"
+      "reverse-proxy-invoke": "./index.js"
     }
+  },
+  "keywords": [
+    "node-red",
+    "reverse-proxy",
+    "invokeai"
+  ],
+  "author": "bloomsirenix",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "request": "^2.88.2"
   }
 }
