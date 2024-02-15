@@ -47,7 +47,7 @@ module.exports = function (RED) {
     });
   }
 
-  RED.nodes.registerType("reverse-proxy-invoke", {
+  RED.nodes.registerType("proxy_invoke", {
     category: "network",
     color: "#a6bbcf",
     defaults: {
@@ -59,7 +59,7 @@ module.exports = function (RED) {
     outputs:1,
     icon: "file.png",
     label: function() {
-      return this.name||"reverse-proxy-invoke";
+      return this.name||"proxy_invoke";
     }
   }, ReverseProxyNode);
 };
