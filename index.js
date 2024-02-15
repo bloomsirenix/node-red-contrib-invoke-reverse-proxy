@@ -36,5 +36,5 @@ module.exports = function (RED) {
     });
   }
 
-  RED.nodes.registerType("reverse-proxy", ReverseProxyNode);
+  RED.nodes.registerType("reverse-proxy-invoke", ReverseProxyNode);
 };
