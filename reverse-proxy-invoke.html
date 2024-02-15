@@ -1,43 +1,39 @@
 <script type="text/javascript">
-  RED.nodes.registerType('reverse-proxy', {
+  RED.nodes.registerType('reverse-proxy-invoke', {
     category: 'function',
     color: '#a6bbcf',
     defaults: {
-      name: { value: "" },
-      endpoint: { value: "http://default-endpoint.com" },
-      port: { value: 3000 }
+      name: {value:""},
+      endpoint: {value:"", required:true},
+      port: {value:"3000", required:true}
     },
-    inputs: 0,
-    outputs: 0,
-    icon: "arrow-in.png",
-    label: function () {
-      return this.name || "Reverse Proxy";
+    inputs:1,
+    outputs:1,
+    icon: "file.png",
+    label: function() {
+      return this.name||"reverse-proxy-invoke";
     },
-    oneditprepare: function () {
-      // Pre-populate the endpoint and port fields in the editor
-      document.getElementById('node-input-endpoint').value = this.endpoint;
-      document.getElementById('node-input-port').value = this.port;
-    },
-    oneditsave: function () {
-      // Save the endpoint and port values
-      this.endpoint = document.getElementById('node-input-endpoint').value;
-      this.port = document.getElementById('node-input-port').value;
+    oneditprepare: function() {
+      // Code to execute when the edit dialog is opened.
     }
   });
 </script>
 
-<!-- Update this line to use the correct template name -->
 <script type="text/html" data-template-name="reverse-proxy-invoke">
   <div class="form-row">
-    <label for="node-input-endpoint">
-      <i class="fa fa-globe"></i> Endpoint
-    </label>
+    <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-endpoint"><i class="icon-globe"></i> Endpoint</label>
     <input type="text" id="node-input-endpoint" placeholder="http://default-endpoint.com">
   </div>
   <div class="form-row">
-    <label for="node-input-port">
-      <i class="fa fa-random"></i> Port
-    </label>
-    <input type="number" id="node-input-port" placeholder="3000">
+    <label for="node-input-port"><i class="icon-random"></i> Port</label>
+    <input type="text" id="node-input-port" placeholder="3000">
   </div>
+</script>
+
+<script type="text/html" data-help-name="reverse-proxy-invoke">
+  <p>A Node-RED node that acts as a reverse proxy for InvokeAI.</p>
 </script>
