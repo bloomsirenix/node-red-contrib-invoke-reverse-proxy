@@ -22,7 +22,7 @@ module.exports = function (RED) {
       req.pipe(http.request(targetUrl, { method: req.method, headers: req.headers }), { end: true }).pipe(res);
     });
 
-    app.use("/assets", express.static("path/to/assets")); // Replace "path/to/assets" with the actual path
+    app.use("/assets", express.static("/assets")); // Replace "path/to/assets" with the actual path
 
     // Start the server
     const port = config.port || 3000; // Default port if not configured
