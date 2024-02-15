@@ -47,5 +47,19 @@ module.exports = function (RED) {
     });
   }
 
-  RED.nodes.registerType("reverse-proxy-invoke", ReverseProxyNode);
+  RED.nodes.registerType("reverse-proxy-invoke", {
+    category: "network",
+    color: "#a6bbcf",
+    defaults: {
+      name: {value:""},
+      endpoint: {value:"", required:true},
+      port: {value:"3000", required:true}
+    },
+    inputs:1,
+    outputs:1,
+    icon: "file.png",
+    label: function() {
+      return this.name||"reverse-proxy-invoke";
+    }
+  }, ReverseProxyNode);
 };
