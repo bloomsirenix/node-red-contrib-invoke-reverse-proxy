@@ -9,7 +9,7 @@
   },
   "node-red": {
     "nodes": {
-      "reverse-proxy": "index.js"
+      "reverse-proxy-invoke": "index.js"
     }
   }
 }
