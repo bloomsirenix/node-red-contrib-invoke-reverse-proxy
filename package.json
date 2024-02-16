@@ -8,7 +8,7 @@
   },
   "node-red": {
     "nodes": {
-      "reverse-proxy-invoke": "./index.js"
+      "proxy_invoke": "./index.js"
     }
   },
   "keywords": [
