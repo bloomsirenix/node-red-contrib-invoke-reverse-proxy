@@ -2,7 +2,7 @@
   "name": "node-red-contrib-invoke-reverse-proxy",
   "version": "1.0.0",
   "description": "A Node-RED module that acts like a NGINX reverse proxy for InvokeAI",
-  "main": "reverse-proxy-invoke.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
